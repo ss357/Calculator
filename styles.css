@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	25% {
+		background-position: 50% 100%;
+	}
+	50% {
+		background-position: 100% 0%;
+	}
+  /* 75% {
+		background-position: 75% 100%;
+	}
+	100% {
+		background-position: 100% 0%;
+	} */
+}
+
+body{
+  background: linear-gradient(45deg,   #de12fd,50%, #2800b8, #de12fd );
+	background-size: 400% 400%; 
+	animation: gradient 10s alternate infinite;
+	height: 100vh;
+}
+
+.container{
+height: 100vh;
+min-width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+
+}
+.calculator{
+  /* background-color: rgb(23, 49, 72); */
+  /* background: linear-gradient(45deg,#524f77,#051c3f ); */
+  background-color: #202020;
+  height: 600px;
+  width: 400px;
+  border-radius: 27px;
+  border: 6px solid rgb(36, 50, 158);
+  border-bottom: 30px solid rgb(32, 8, 78);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 5px 10px rgb(0, 0, 0);
+  /* margin: 210px 0px 0px 40px; */
+  /* margin: 40px 0px 0px 40px; */
+}
+/* .display{
+  height: 20%;
+  width: 100%;
+  padding: 20px;
+  border: 4px solid rgb(2, 182, 158);
+  border-radius: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #4f4d75;
+} */
+
+.display {
+  --border-size: 4px;
+  --border-angle: 0turn;
+  padding: 20px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 100%;
+  height: 20%;
+  background-image:
+  conic-gradient(from var(--border-angle), #213,#112 50%,#213),
+  conic-gradient(from var(--border-angle), transparent 5%, #08f, #f03);
+  background-size:
+  calc(100% - (var(--border-size)*2)) calc(100% - (var(--border-size)*2)), cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  animation: bg-spin 3s linear infinite;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+
+
+
+
+
+h1{
+
+  overflow:hidden;
+  margin-top: 12px;
+  color: antiquewhite;
+  text-align: right;
+  font-size: 3rem;
+  background: linear-gradient(
+    45deg, #f32170, #ff6b08,
+     #cf23cf, #eedd44);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+}
+
+
+.buttons{
+  margin-top: -9px;
+  height: 75%;
+  display: grid;
+  grid: auto auto / auto auto auto auto;
+  grid-gap: 3px;
+  grid-area: span;
+  
+  /* background-color: #2196F3; */
+  padding: 10px;
+  padding-bottom: 20px;
+  
+ 
+}
+
+button{
+  cursor:pointer;
+  margin: 2px;
+  height: 90px;
+  font-size: 2rem;
+  background-color: #656464;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 2px 4px rgb(114, 75, 230);
+  
+
+  
+}
+button:hover{
+color: aqua;
+/* transition: 0.5s; */
+/* transform: scale(.9); */
+/* font-size: 1.9rem; */
+/* box-shadow: 2px 4px inset ; */
+box-shadow: 1.5px 1.5px 6px 1px rgb(150, 255, 255) inset;
+
+  
+}
+button:active{
+  background-color: #403838;
+  transform: scale(.8);
+/* box-shadow: 2px 4px inset ; */
+box-shadow: 2px 2px 4px 2px aqua inset;
+
+}
+
+#equalsto{
+  /* position: absolute; */
+  /* width: 100px; */
+  grid-column: 3/span 2;
+  background-color: rgb(44, 72, 186);
+  box-shadow: 2px 4px rgb(45, 72, 192);
+  font-size: 2.5rem;
+  height: 90%;
+}
+#equalsto:hover{
+  color: rgb(183, 185, 183);
+  transform: scale(1.05);
+}
+#equalsto:active{
+  color: rgb(126, 126, 126);
+  background-color: rgb(19, 51, 182);
+  transform: scale(.8);
+}
+
+.operator{
+  background-color: #8084c8;
+}
+.operator:hover{
+  color: #1500f9;
+  box-shadow: 1.5px 1.5px 6px 1px rgb(59, 81, 253) inset;
+  /* background-color: rgb(56, 4, 82); */
+}
+.operator:active{
+  background-color: rgb(21, 126, 196);
+}
+#decimal{
+  font-size: 4rem;
+}
+
+#AC{
+  background-color: rgb(208, 81, 81);
+  box-shadow:2px 4px rgb(182, 74, 74);
+}
+#AC:hover{
+  color: rgb(237, 237, 8);
+}
+#AC:active{
+  color: #deb204;
+  background-color: rgb(213, 50, 50);
+}
